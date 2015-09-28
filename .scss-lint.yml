@@ -1,0 +1,5 @@
+scss_files: 'app/styles'
+
+linters:
+  IdSelector:
+    enabled: false
