@@ -3,6 +3,10 @@
   border-radius: 4px;
   height: 36px;
   padding: 0 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background 100ms;
+  font-weight: 200;
 
   &.large {
     font-size: 3.2rem;
@@ -13,4 +17,26 @@
     @include color-scheme($white, $primary);
   }
 
+  &.special {
+    background: none;
+    border-radius: 6px;
+    color: $default;
+    display: block;
+    font-size: 20px;
+    font-weight: 200;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    width: 200px;
+
+    &:hover,
+    &:focus {
+      background: $wash;
+    }
+
+    &:active {
+      background: darken($wash, 4);
+    }
+  }
 }

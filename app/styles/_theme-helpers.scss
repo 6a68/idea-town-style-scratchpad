@@ -4,6 +4,8 @@ $default: #0c99d5;
 $primary: #6fbe4a;
 $wash: #e2eaed;
 $dark: #56565a;
+$light: #f3f3f3;
+$transparent-white: rgba(255,255,255,.6);
 
 
 // Color Management
@@ -16,6 +18,14 @@ $dark: #56565a;
     border-top: 6px solid $white;
   }
   color: $white;
+}
+
+// Font Management
+@mixin outline-text($outline: $white) {
+  text-shadow:  -1px -1px 0 $outline,  
+                1px -1px 0 $outline,
+                -1px 1px 0 $outline,
+                1px 1px 0 $outline;
 }
 
 @mixin color-scheme-special-inverse($border-top: false) {

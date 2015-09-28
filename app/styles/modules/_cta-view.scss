@@ -15,23 +15,20 @@
     width: 141px;
   }
 
-  .hero {
+  h1 {
     font-size: 8rem;
     line-height: 8rem;
     margin-bottom: 3rem;
   }
 
-  .sub-hero {
+  h2 {
     font-size: 3rem;
     line-height: 4.5rem;
     margin-bottom: 4rem;
   }
+}
 
-  .large-link {
-    font-size: 1.2rem;
-  }
-
-  .cta-layout-wrapper {
+#cta-layout-wrapper {
     display: flex;
     height: 322px;
     justify-content: space-between;
@@ -44,9 +41,9 @@
       }
 
       .fxa-alternate {
-        color: #fff;
+        color: $white;
         display: block;
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: 400;
         padding: 12px 0 30px;
       }
@@ -66,4 +63,3 @@
       width: 657px;
     }
   }
-}

@@ -1,5 +1,13 @@
-#footer {
-  @include color-scheme($default, $wash);
-  border-top: 2px solid $black;
+#main-footer {
   flex: 1 1 80px;
+
+  &.wash {
+    border-top: 2px solid $black;
+    @include color-scheme($default, $wash);
+  }
+
+  &.light {
+    @include color-scheme($black, $light);
+  }
+
 }

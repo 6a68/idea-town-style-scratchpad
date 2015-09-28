@@ -1,8 +1,7 @@
 @import '../../node_modules/normalize.scss/normalize';
 
+@import 'theme-helpers';
+@import 'layout-helpers';
+
 @import 'base';
-
-@import 'theme';
-@import 'layout';
-
 @import 'modules';
