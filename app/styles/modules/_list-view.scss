@@ -1,8 +1,12 @@
+#list-view {
+  @include color-scheme-special-inverse(false);
+}
+
 #expanded-branding {
   @include color-scheme-special(false);
-  border-bottom: 2px solid black;
-  height: 206px;
   background-size: cover;
+  border-bottom: 2px solid $black;
+  height: 206px;
 
   header {
     @include hidpi-background-image('small-firefox-logo', 57px 59px);
@@ -22,8 +26,8 @@
     background-repeat: no-repeat;
     border-bottom: 2px solid $black;
     height: 206px;
-    margin-left: -70px;
     left: 70px;
+    margin-left: -70px;
     position: relative;
     width: 744px;
     z-index: 0;
@@ -31,18 +35,20 @@
 }
 
 #idea-card-list {
-  @include respond-to('big') {
-    @include flex-container(default, space-between, top, wrap, true);
-  }
-  @include respond-to('medium') {
-    @include flex-container(default, space-around, top, wrap, true);
-  }
   @include wrapper;
   border-bottom: 2px solid $light;
   flex: 1;
   margin-bottom: 20px;
   margin-top: 60px;
   padding-bottom: 50px;
+
+  @include respond-to('big') {
+    @include flex-container(default, space-between, top, wrap, true);
+  }
+
+  @include respond-to('medium') {
+    @include flex-container(default, space-around, top, wrap, true);
+  }
 }
 
 .idea-card {
@@ -113,8 +119,8 @@
     background-color: $primary;
     background-position: center center;
     background-repeat: no-repeat;
-    border-radius: 50%;
     border: 3px solid $white;
+    border-radius: 50%;
     content: '';
     height: 56px;
     position: absolute;

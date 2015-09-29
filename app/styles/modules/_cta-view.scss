@@ -29,37 +29,37 @@
 }
 
 #cta-layout-wrapper {
-    display: flex;
-    height: 322px;
-    justify-content: space-between;
+  display: flex;
+  height: 322px;
+  justify-content: space-between;
 
-    .cta-layout {
-      flex: 1 1;
+  .cta-layout {
+    flex: 1 1;
 
-      .button {
-        width: 100%;
-      }
-
-      .fxa-alternate {
-        color: $white;
-        display: block;
-        font-size: 2rem;
-        font-weight: 400;
-        padding: 12px 0 30px;
-      }
-
-      .cta-legal {
-        font-size: 14px;
-        margin: 0 24px 0 0;
-      }
+    .button {
+      width: 100%;
     }
 
-    .town {
-      @include hidpi-background-image('town', 657px 322px); 
-      flex: 0 1 657px;
-      height: 322px;
-      position: relative;
-      top: 18px;
-      width: 657px;
+    .fxa-alternate {
+      color: $white;
+      display: block;
+      font-size: 2rem;
+      font-weight: 400;
+      padding: 12px 0 30px;
+    }
+
+    .cta-legal {
+      font-size: 14px;
+      margin: 0 24px 0 0;
     }
   }
+
+  .town {
+    @include hidpi-background-image('town', 657px 322px); 
+    flex: 0 1 657px;
+    height: 322px;
+    position: relative;
+    top: 18px;
+    width: 657px;
+  }
+}

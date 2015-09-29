@@ -1,10 +1,11 @@
 #idea-view {
   @include color-scheme-special-inverse(false);
-  border-top: none;
+  color: $black;
 }
 
 #condensed-branding {
-  @include color-scheme-special;
+  @include color-scheme-special(false);
+
   .row {
     @include flex-container(default, space-between, center, nowrap, true);
     height: 80px;
@@ -13,6 +14,7 @@
   h2 {
     @include hidpi-background-image('small-firefox-logo', 57px 59px);
     background-repeat: no-repeat;
+    color: $white;
     height: 57px;
     line-height: 57px;
     padding-left: 72px;
@@ -20,8 +22,32 @@
 }
 
 #details {
-  margin-top: 40px;
   flex: 1;
+  margin: 30px 0 60px;
+}
+
+.details-header-wrapper {
+
+  &.stick {
+    background: $transparent-stick;
+    box-shadow: 0 0 5px $transparent-black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    h1 {
+      font-size: 40px;
+      transition: font-size 200ms;
+    }
+
+    + .details-content {
+      margin-top: 66px;
+    }
+
+    .details-header {
+      height: 66px;
+    }
+  }
 }
 
 .details-header {
@@ -48,23 +74,23 @@
   @include flex-container(default, space-between, top, nowrap, true);
   padding-top: 30px;
 
-  img:first-child {
-    background: $black;
-    border: 2px solid $black;
-    border-radius: 50%;
-  }
-
   h3 {
     margin: 24px 0 12px;
   }
 }
 
 .details-overview {
-  flex: 0 0 240px;
+  flex: 0 0 260px;
+
+  > img:first-child {
+    background: $black;
+    border: 2px solid $black;
+    border-radius: 50%;
+  }
 }
 
 .details-description {
-  flex: 0 0 720px;
+  flex: 0 0 680px;
 }
 
 .disclaimer {
@@ -74,21 +100,21 @@
 
 .measurement {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 
   li {
     background: $light;
-    padding: 8px;
     border-left: 2px solid $primary;
     margin-bottom: 2px;
+    padding: 8px;
   }
 }
 
 .contributors {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
    
   li {
     @include flex-container(default, left, center, nowrap, false);
@@ -107,16 +133,29 @@
 
 .stats {
   font-size: 12px;
-  width: 100%;
   margin-bottom: 50px;
+  width: 100%;
 
   td {
-    width: 75%;
-    vertical-align: top;
     padding-bottom: 5px;
+    vertical-align: top;
+    width: 65%;
   }
+
   td:first-child {
-    width: 25%;
     font-weight: bold;
+    width: 35%;
+  }
+}
+
+.details-image {
+  margin-bottom: 32px;
+
+  img {
+    background: $light;
+    border: 1px solid darken($light, 6);
+    border-radius: 6px;
+    height: 400px;
+    width: 100%;
   }
 }

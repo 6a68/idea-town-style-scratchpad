@@ -1,18 +1,21 @@
 var gulp = require('gulp'),
     autoprefixer  = require('gulp-autoprefixer'),
-    bourbon = require('node-bourbon'),
     connect = require('gulp-connect'),
     livereload = require('gulp-livereload'),
-    neat = require('node-neat'),
     notify = require('gulp-notify'),
     sass = require('gulp-sass');
+    sourcemaps = require('gulp-sourcemaps');
+    normalize = require('node-normalize-scss');
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
-    .pipe(sass({
-       includePaths: bourbon.with(neat.includePaths)
-     }).on('error', sass.logError))
+    .pipe(sourcemaps.init())
+    .pipe(sass({includePaths: normalize.includePaths}).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
+    // option passed in on the next line ensures FF doesn't
+    // shit the bed when trying to figure out where
+    // normalize comes from
+    .pipe(sourcemaps.write({sourceRoot: 'app/styles'}))
     .pipe(gulp.dest('app/'))
 });
 
@@ -24,10 +27,15 @@ gulp.task('connect', function connectTask() {
   });
 });
 
-gulp.task('move', function() {
+gulp.task('move:jquery', function() {
+  gulp.src('./node_modules/jquery/dist/jquery.min.js')
+  .pipe(gulp.dest('./app/lib/jquery'));
+});
+
+gulp.task('move:tabzilla', function() {
   gulp.src('./node_modules/mozilla-tabzilla/**/*')
   .pipe(gulp.dest('./app/lib/mozilla-tabzilla'));
-});
+})
 
 gulp.task('server', ['styles', 'connect']);
 

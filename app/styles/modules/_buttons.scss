@@ -1,12 +1,12 @@
 .button {
   border: 0;
   border-radius: 4px;
+  font-weight: 200;
   height: 36px;
   padding: 0 16px;
   text-align: center;
   text-decoration: none;
-  transition: background 100ms;
-  font-weight: 200;
+  transition: background 50ms;
 
   &.large {
     font-size: 3.2rem;
@@ -15,6 +15,22 @@
 
   &.primary {
     @include color-scheme($white, $primary);
+
+    &:hover,
+    &:focus {
+      background: darken($primary, 4);
+    }
+
+    &:active {
+      background: darken($primary, 9);
+      box-shadow: 0 2px 3px $transparent-black inset;
+    }
+  }
+
+  &.icon {
+    border: 2px solid $black;
+    flex: 0 0 36px;
+    height: 36px;
   }
 
   &.special {
@@ -26,8 +42,8 @@
     font-weight: 200;
     height: 60px;
     line-height: 60px;
+    margin: 0 auto 20px;
     text-align: center;
-    margin: 0 auto 20px auto;
     width: 200px;
 
     &:hover,
